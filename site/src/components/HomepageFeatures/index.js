@@ -2,44 +2,29 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
+// Add items to this list
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Easy to search',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Use the Algolia search bar to find exercises relevant to your 
       </>
     ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
+  }
 ];
 
 function Feature({Svg, title, description}) {
+  let enableSvg = false
+  let svg
+  if(enableSvg) {
+    svg = <Svg className={styles.featureSvg} role="img" />
+  }
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        {svg}
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
